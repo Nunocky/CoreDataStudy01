@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5023"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -13,6 +13,7 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="appController" destination="qed-0C-W1X" id="mN3-se-T79"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -670,11 +671,121 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DS8-JP-Wa9">
+                        <rect key="frame" x="14" y="279" width="105" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="93" id="aD1-g6-dIG"/>
+                            <constraint firstAttribute="height" constant="21" id="lSL-PL-eKT"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="記事の一覧" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RgM-L2-qlQ">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="13" name="AquaKana"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="buttonClicked:" target="qed-0C-W1X" id="3ke-fz-6yn"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HNs-Na-Oa8">
+                        <rect key="frame" x="14" y="246" width="186" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="MYf-cE-LS8"/>
+                            <constraint firstAttribute="width" constant="174" id="Qva-GT-AAf"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="各blogから記事一個削除" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XfB-Je-HnD">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="13" name="AquaKana"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="button2Clicked:" target="qed-0C-W1X" id="OIh-IV-5lU"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iMM-jJ-bsf">
+                        <rect key="frame" x="14" y="312" width="105" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="k0B-oC-x3w"/>
+                            <constraint firstAttribute="width" constant="93" id="rjf-XW-OLG"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="データ追加" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PMk-Sz-XFR">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="13" name="AquaKana"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="button3Clicked:" target="qed-0C-W1X" id="utV-4H-S5M"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="s29-Mp-YsT">
+                        <rect key="frame" x="119" y="312" width="118" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="NcH-ae-1db"/>
+                            <constraint firstAttribute="width" constant="106" id="W4E-xR-esD"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="全データ削除" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bI9-iq-qat">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="13" name="AquaKana"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="button4Clicked:" target="qed-0C-W1X" id="LBE-hc-uMP"/>
+                        </connections>
+                    </button>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnj-AI-ldf">
+                        <rect key="frame" x="20" y="20" width="440" height="213"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <clipView key="contentView" id="y7S-XE-BaK">
+                            <rect key="frame" x="1" y="1" width="438" height="211"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="g8g-sA-1Nl">
+                                    <rect key="frame" x="0.0" y="0.0" width="438" height="211"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="438" height="211"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="438" height="211"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                    <connections>
+                                        <binding destination="qed-0C-W1X" name="attributedString" keyPath="self.text" id="6GP-zf-TMt"/>
+                                    </connections>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="nyR-zS-deD">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="rTt-zE-1ii">
+                            <rect key="frame" x="423" y="1" width="16" height="211"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="HNs-Na-Oa8" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="673-If-aaS"/>
+                    <constraint firstItem="iMM-jJ-bsf" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="Dt0-jp-U4G"/>
+                    <constraint firstItem="iMM-jJ-bsf" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="EmZ-TV-hIL"/>
+                    <constraint firstItem="s29-Mp-YsT" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="TiE-Ji-Kvh"/>
+                    <constraint firstItem="DS8-JP-Wa9" firstAttribute="top" secondItem="iMM-jJ-bsf" secondAttribute="bottom" constant="12" id="WF7-2b-JcY"/>
+                    <constraint firstItem="s29-Mp-YsT" firstAttribute="leading" secondItem="iMM-jJ-bsf" secondAttribute="trailing" constant="12" id="feb-xe-OU2"/>
+                    <constraint firstItem="xnj-AI-ldf" firstAttribute="top" secondItem="HNs-Na-Oa8" secondAttribute="bottom" constant="20" id="fic-Ir-nfq"/>
+                    <constraint firstAttribute="bottom" secondItem="xnj-AI-ldf" secondAttribute="bottom" constant="20" id="gky-Vv-lLN"/>
+                    <constraint firstItem="DS8-JP-Wa9" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="md9-RX-gbo"/>
+                    <constraint firstItem="HNs-Na-Oa8" firstAttribute="top" secondItem="DS8-JP-Wa9" secondAttribute="bottom" constant="12" id="wgw-5x-kaR"/>
+                    <constraint firstAttribute="trailing" secondItem="xnj-AI-ldf" secondAttribute="trailing" constant="20" id="xj1-B9-DRe"/>
+                    <constraint firstItem="xnj-AI-ldf" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="zeQ-tV-zej"/>
+                </constraints>
             </view>
         </window>
+        <customObject id="qed-0C-W1X" customClass="AppController"/>
+        <userDefaultsController representsSharedInstance="YES" id="iXT-g2-pNf"/>
     </objects>
 </document>

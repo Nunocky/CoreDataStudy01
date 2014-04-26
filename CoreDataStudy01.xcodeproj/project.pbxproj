@@ -19,6 +19,9 @@
 		99CB7D00190B2480000C275D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CB7CDC190B2480000C275D /* Cocoa.framework */; };
 		99CB7D08190B2480000C275D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99CB7D06190B2480000C275D /* InfoPlist.strings */; };
 		99CB7D0A190B2480000C275D /* CoreDataStudy01Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CB7D09190B2480000C275D /* CoreDataStudy01Tests.m */; };
+		99CB7D15190B252F000C275D /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CB7D14190B252F000C275D /* AppController.m */; };
+		99CB7D24190B3170000C275D /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CB7D23190B3170000C275D /* Article.m */; };
+		99CB7D27190B3170000C275D /* Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CB7D26190B3170000C275D /* Blog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,12 @@
 		99CB7D05190B2480000C275D /* CoreDataStudy01Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreDataStudy01Tests-Info.plist"; sourceTree = "<group>"; };
 		99CB7D07190B2480000C275D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		99CB7D09190B2480000C275D /* CoreDataStudy01Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataStudy01Tests.m; sourceTree = "<group>"; };
+		99CB7D13190B252F000C275D /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		99CB7D14190B252F000C275D /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		99CB7D22190B3170000C275D /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		99CB7D23190B3170000C275D /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		99CB7D25190B3170000C275D /* Blog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blog.h; sourceTree = "<group>"; };
+		99CB7D26190B3170000C275D /* Blog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Blog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +131,12 @@
 				99CB7CF1190B2480000C275D /* MainMenu.xib */,
 				99CB7CF7190B2480000C275D /* Images.xcassets */,
 				99CB7CF4190B2480000C275D /* CoreDataStudy01.xcdatamodeld */,
+				99CB7D13190B252F000C275D /* AppController.h */,
+				99CB7D14190B252F000C275D /* AppController.m */,
+				99CB7D25190B3170000C275D /* Blog.h */,
+				99CB7D26190B3170000C275D /* Blog.m */,
+				99CB7D22190B3170000C275D /* Article.h */,
+				99CB7D23190B3170000C275D /* Article.m */,
 				99CB7CE3190B2480000C275D /* Supporting Files */,
 			);
 			path = CoreDataStudy01;
@@ -255,9 +270,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99CB7D24190B3170000C275D /* Article.m in Sources */,
 				99CB7CF6190B2480000C275D /* CoreDataStudy01.xcdatamodeld in Sources */,
 				99CB7CF0190B2480000C275D /* AppDelegate.m in Sources */,
 				99CB7CE9190B2480000C275D /* main.m in Sources */,
+				99CB7D15190B252F000C275D /* AppController.m in Sources */,
+				99CB7D27190B3170000C275D /* Blog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,4 +18,5 @@
 
 - (IBAction)saveAction:(id)sender;
 
+@property IBOutlet id appController;
 @end

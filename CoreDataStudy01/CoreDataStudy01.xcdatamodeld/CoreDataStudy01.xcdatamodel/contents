@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="untitled.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C1021" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Article" representedClassName="Article" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="blog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Blog" inverseName="article" inverseEntity="Blog" syncable="YES"/>
+    </entity>
+    <entity name="Blog" representedClassName="Blog" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="article" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Article" inverseName="blog" inverseEntity="Article" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Blog" positionX="-200" positionY="-99" width="128" height="73"/>
+        <element name="Article" positionX="-11" positionY="-81" width="128" height="73"/>
+    </elements>
 </model>
